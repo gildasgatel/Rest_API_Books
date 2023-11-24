@@ -1,0 +1,24 @@
+CREATE:
+curl --location 'localhost:8080/books' \
+--header 'Content-Type: text/plain' \
+--data '{
+        "title": "my book",
+        "author": "me",
+        "quantity": 20
+    }'
+
+READ:
+curl --location 'localhost:8080/books'
+
+UPDATE:
+curl --location --request PUT 'localhost:8080/books' \
+--header 'Content-Type: text/plain' \
+--data '{
+        "id": 1,
+        "title": "The best",
+        "author": "you",
+        "quantity": 12
+    }'
+
+DELETE:
+curl --location --request DELETE 'localhost:8080/books/1'
